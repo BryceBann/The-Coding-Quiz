@@ -1,0 +1,57 @@
+body{
+    background-color: RGB (251, 250, 245);
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+/*Top of page style*/
+#pageTop{
+    background-color: wheat;
+   margin-top: -3rem;
+}
+
+#pageTop h1{
+    text-align: center;
+    font-size: 4rem;
+}
+/*High score and timer placement*/
+#scoreTime{
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#scoreTime p{
+    display: inline-flex;
+}
+
+.highscore{
+    margin-left: 1rem;
+}
+
+.timer{
+    margin-right: 1rem;
+}
+/*style and placement for questions and answers*/
+#Questions{
+    width: 100%;
+    height: 12rem;
+    border: 2px solid black;
+}
+
+#answers{
+    width: 100%;
+    height: 20rem;
+    border: 2px solid black;
+    margin-top: 2rem;
+}
+
+#right-wrong{
+    border: 2px solid black;
+    margin-top: 2rem;
+    width: 100%;
+    height: 10rem;
+}
