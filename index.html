@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" a href="./style.css">
+    <link rel="stylesheet" a href="./Main/style.css"
     
 </head>
 <body>
@@ -21,7 +21,7 @@
 <!--High score and timer div -->
     <div id="scoreTime">
         <p class="highscore">View highscores</p>
-        <p class="timer">Time left: <span>0</span></p>
+        <p class="timer">Time left: <span>75</span></p>
     </div>
 
     <!--Main quiz portion of the page-->
@@ -29,7 +29,7 @@
         <div id="start">
             <h2>Basic Code Quiz</h2>
             <p>Welcome to the basic coding quiz, this quiz will test you knoweledge on basic javascript.</p>
-            <button  id="startButton" a herf="#">Start</button>
+            <button  id="startButton" class="btn" onclick="gameStart()">Start</button>
         </div>
         <div id="questionHolder" class="hide">
             <h2 id="question"></h2>
@@ -41,10 +41,10 @@
         <!--Results and high score-->
         <div id="finishedPage">
             <h2>Quiz Complete</h2>
-            <p>Your final score is</p>
+            <p>Your final score is <span id="pointScore"></span>/100</p>
             <label>Enter your initials:</label>
             <input type="text" id="initials">
-            <button id="sendScore" onclick="handleSubmit()">Submit score</button>
+            <button id="sendScore" onclick="submitScore()">Submit score</button>
         </div>
     </div>
 
@@ -53,6 +53,6 @@
 
     </div>
     
-    <script src="./script.js"></script>
+    <script src="Main/script.js"></script>
 </body>
 </html>

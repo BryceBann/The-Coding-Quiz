@@ -8,4 +8,4 @@ side notes and add in
 -10 question quiz each question is 10 points
 -each wrong anwer is minus 10 secinds 
 -game time 75 sec.
-
+-use this time to study while putting in questions and answers
