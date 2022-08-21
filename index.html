@@ -8,29 +8,41 @@
     <link rel="stylesheet" a href="./style.css">
 </head>
 <body>
+
+
     <!--Top of page-->
     <header>
         <div id="pageTop">
             <h1>The coding quiz</h1>
         </div>
     </header>
+
 <!--High score and timer div -->
     <div id="scoreTime">
         <p class="highscore">View highscores</p>
-        <p class="timer">Time left: 0</p>
+        <p class="timer">Time left: <span>0</span></p>
     </div>
+
     <!--Main quiz portion of the page-->
     <div id="QuizHolder">
+        <div id="start">
+            <h2>Basic Code Quiz</h2>
+            <p>Welcome to the basic coding quiz, this quiz will test you knoweledge on basic javascript.</p>
+            <button  id="startButton" a herf="#">Start</button>
+        </div>
         <div id="Questions">
 
         </div>
             <div id="answers">
 
             </div>
+            
     </div>
+
     <!--Right or Wrong-->
     <div id="right-wrong">
 
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

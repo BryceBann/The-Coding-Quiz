@@ -35,10 +35,28 @@ body{
 .timer{
     margin-right: 1rem;
 }
+
+/*start button and intro*/
+#start{
+    font-size: 1.5rem;
+    display: flex;
+    flex-flow: column;
+    height: 1rem;
+    text-align: center;
+}
+
+#startButton{
+    font-size: 1rem;
+    background-color: aqua;
+    width: fit-content;
+    margin: auto;
+    width: 10rem;
+    border-radius: .3rem;
+}
 /*style and placement for questions and answers*/
 #Questions{
     width: 100%;
-    height: 12rem;
+    height: 15rem;
     border: 2px solid black;
 }
 
@@ -55,3 +73,4 @@ body{
     width: 100%;
     height: 10rem;
 }
+
