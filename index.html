@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" a href="./style.css">
+    
 </head>
 <body>
 
@@ -30,19 +31,28 @@
             <p>Welcome to the basic coding quiz, this quiz will test you knoweledge on basic javascript.</p>
             <button  id="startButton" a herf="#">Start</button>
         </div>
-        <div id="Questions">
-
+        <div id="questionHolder" class="hide">
+            <h2 id="question"></h2>
+            <button id="answer1" class="btn" onclick="nextQuestion(event)"></button>
+            <button id="answer2" class="btn" onclick="nextQuestion(event)"></button>
+            <button id="answer3" class="btn" onclick="nextQuestion(event)"></button>
+            <button id="answer4" class="btn" onclick="nextQuestion(event)"></button>
         </div>
-            <div id="answers">
-
-            </div>
-            
+        <!--Results and high score-->
+        <div id="finishedPage">
+            <h2>Quiz Complete</h2>
+            <p>Your final score is</p>
+            <label>Enter your initials:</label>
+            <input type="text" id="initials">
+            <button id="sendScore" onclick="handleSubmit()">Submit score</button>
+        </div>
     </div>
 
     <!--Right or Wrong-->
     <div id="right-wrong">
 
     </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>
