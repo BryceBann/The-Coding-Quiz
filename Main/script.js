@@ -20,7 +20,7 @@ var questionKey = [
 ];
 
 //starting postions
-let timeLeft = 75;
+
 let score = 0;
 let currentQuestion = -1
 let finalScore;
@@ -40,6 +40,7 @@ function gameStart() {
 
 //timer function/Count down
 function gameStart() {
+    let timeLeft = 75;
     timerEl.textContent = timeLeft;
     var timeChange = setInterval(
     () => {
@@ -68,7 +69,8 @@ function nextquestion() {
     };
 };
 
-function nextquestion(event) {
+//controls populationg the next question after a user clicks an answer and ending the game when no mire questions left
+function grabAnswer(event) {
     var answerCorrect = grabAnswer(currentQuestion);
     if(event.target.textContent === answerCorrect) {
         score += 10;
@@ -82,7 +84,8 @@ function nextquestion(event) {
         }, 500);
 };
 
-function grabAnswer(currentQuestion) {
+
+function answerChecker(currentQuestion) {
     var arr = randomQuestionMix[currentQuestion].answerKey;
     for(var y = 0; y < arr.length; y++) {
         if(arr[j].correct) {

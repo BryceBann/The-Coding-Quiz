@@ -5,7 +5,39 @@
 -point system for every correct answer
 
 side notes and add in
--10 question quiz each question is 10 points
--each wrong anwer is minus 10 secinds 
+-5 question quiz each question is 10 points
+-each wrong anwer is minus 10 seconds 
 -game time 75 sec.
 -use this time to study while putting in questions and answers
+
+
+questions
+1.which variable has the value of a string.
+a. x = 6
+b. x = "87" //correct
+c. x = true
+d. x;
+
+2.choose the operator that checks for value and type.
+a. =
+b. +=
+c. === //correct
+d. =>
+
+3.choose  the true statment.
+a. 4 != 4
+b. 4 > 85
+c. 7 === "7" //correct
+d. 7.6 == "7.6"
+
+4.which data type is not primitive.
+a. boolean
+b. array //corect
+c. number
+d. string
+
+5.WHich one is the Increment operator.
+a. **
+b. /
+c. ++ //corect
+d. +=
