@@ -17,7 +17,7 @@ var questionKey = [
     options: ["Fucking massive duck","widdle baby", "good eating duck"],
     correct: 0
 }
-]
+];
 
 //starting postions
 let timeLeft = 75;
@@ -36,10 +36,10 @@ function gameStart() {
     changeDiv('start', 'questionHolder');
     nextquestion();
     startTimer();
-}
+};
 
 //timer function/Count down
-function startTimer() {
+function gameStart() {
     timerEl.textContent = timeLeft;
     var timeChange = setInterval(
     () => {
@@ -50,7 +50,7 @@ function startTimer() {
             gameOver();
         }
     }, 1000);
-}
+};
 
 //will end game when all questions are completed as well as populate the next question
 function nextquestion() {
@@ -96,7 +96,7 @@ function gameOver() {
     changeDiv('questionHolder', 'finishedPage');
     finalScore = score;
     finalScoreEl.textContent = finalScore;
-}
+};
 
 function submitScore() {
     var initials = nameEl.value;
@@ -115,7 +115,5 @@ function submitScore() {
     });
 
     localStorage.setItem('highscores', JSON.stringify(highScore))
-    window.location.herf = "./highscore.html"
-
-
-}
+    window.location.href = "./highscore.html";
+};

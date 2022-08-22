@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" a href="./Main/style.css"
-    
+    <title>The coding quiz</title>
+    <link rel="stylesheet" a href="./Main/style.css">
+    <script src="Main/script.js"></script>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
     </div>
 
     <!--Main quiz portion of the page-->
-    <div id="QuizHolder">
+    <div id="quizHolder">
         <div id="start">
             <h2>Basic Code Quiz</h2>
             <p>Welcome to the basic coding quiz, this quiz will test you knoweledge on basic javascript.</p>
@@ -39,7 +39,7 @@
             <button id="answer4" class="btn" onclick="nextQuestion(event)"></button>
         </div>
         <!--Results and high score-->
-        <div id="finishedPage">
+        <div id="finishedPage" class="hide">
             <h2>Quiz Complete</h2>
             <p>Your final score is <span id="pointScore"></span>/100</p>
             <label>Enter your initials:</label>
@@ -53,6 +53,6 @@
 
     </div>
     
-    <script src="Main/script.js"></script>
+    
 </body>
 </html>
