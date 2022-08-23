@@ -40,23 +40,23 @@ choiceFour: "7.6 == \"7.6\"",
 answer: "7.6 == \"76\""
 },
 
-// {
-// question: "which data type is not primitive.",
-// arrAnswer: [
-//    {answer: "boolean", correct: false},
-//    {answer: "array", correct: true},
-//    {answer: "number", correct: false},
-//    {amswer: "string", correct: false}]
-// },
+{
+ question: "which data type is not primitive.",
+ choiceOne: "boolean",
+choiceTwo: "array",
+choiceThree: "number",
+choiceFour: "string",
+answer: "array"
+ },
 
-// {
-// question: "WHich one is the Increment operator.",
-// arrAnswer:[
-//     {amswer: "**", correct: false},
-//     {answer: "/", correct: false},
-//     {amswer: "++", correct: true},
-//     {amswer: "+=", correct: false}]
-// }
+ {
+ question: "WHich one is the Increment operator.",
+ choiceOne: "**",
+choiceTwo: "/",
+choiceThree: "++",
+choiceFour: "+=",
+answer: "++"
+ }
 ];
 
 //starting postions
