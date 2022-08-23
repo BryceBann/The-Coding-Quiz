@@ -39,7 +39,8 @@ function gameStart() {
 };
 
 //timer function/Count down
-function gameStart() {
+document.querySelector('#startButton').addEventListener('click', startTimer);
+function startTimer() {
     let timeLeft = 75;
     timerEl.textContent = timeLeft;
     var timeChange = setInterval(
