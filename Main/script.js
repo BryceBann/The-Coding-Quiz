@@ -1,5 +1,5 @@
 //calling in id/class from HTML 
-const questionEl = document.getElementsByClassName("question")
+const questionEl = document.getElementById("question")
 const checkers = document.getElementById("right-wrong")
 const timerEl = document.getElementsByClassName("timeSpan")
 const answerOne = document.getElementById("answer1")
@@ -15,48 +15,48 @@ var questionKey = [
 
 {
    question: "which variable has the value of a string.",
-arrAnswer: [
-    {answer: "x = 6", correct: false},
-    {answer: "x = \"87\"" , correct: true},
-    {answer: "x = true", correct: false},
-    {answer: "x;", correct: false}]
+choiceOne: "x = 6",
+choiceTwo: "x = \"87\"",
+choiceThree: "x = true",
+choiceFour: "x;",
+answer: "x = \"87\""
 },
 
 {
-question: "choose the operator that checks for value and type.",
-arrAnswer: [
-    {answer: "=", correct: false},
-    {answer: "+=", correct:  false},
-    {answer: "===", correct:  true},
-    {amswer: "<=", correct: false}]
+question: "choose the operator that checks for value and type.", 
+choiceOne: "=",
+choiceTwo: "+=",
+choiceThree: "===",
+choiceFour: "<=;",
+answer: "==="
 },
 
 {
 question: "choose  the true statment.",
-arrAnswer: [
-    {answer: "4 != 4", correct: false},
-    {answer: "4 > 85", correct: false},
-    {answer: "7 === \"7\"", correct: true},
-    {answer: "7.6 == \"7.6\"", correct: false}]
+choiceOne: "4 != 4",
+choiceTwo: "4 > 85",
+choiceThree: "7 === \"7\"",
+choiceFour: "7.6 == \"7.6\"",
+answer: "7.6 == \"76\""
 },
 
-{
-question: "which data type is not primitive.",
-arrAnswer: [
-   {answer: "boolean", correct: false},
-   {answer: "array", correct: true},
-   {answer: "number", correct: false},
-   {amswer: "string", correct: false}]
-},
+// {
+// question: "which data type is not primitive.",
+// arrAnswer: [
+//    {answer: "boolean", correct: false},
+//    {answer: "array", correct: true},
+//    {answer: "number", correct: false},
+//    {amswer: "string", correct: false}]
+// },
 
-{
-question: "WHich one is the Increment operator.",
-arrAnswer:[
-    {amswer: "**", correct: false},
-    {answer: "/", correct: false},
-    {amswer: "++", correct: true},
-    {amswer: "+=", correct: false}]
-}
+// {
+// question: "WHich one is the Increment operator.",
+// arrAnswer:[
+//     {amswer: "**", correct: false},
+//     {answer: "/", correct: false},
+//     {amswer: "++", correct: true},
+//     {amswer: "+=", correct: false}]
+// }
 ];
 
 //starting postions
@@ -75,8 +75,9 @@ document.getElementById(next).removeAttribute('class')
 document.querySelector('#startButton').addEventListener('click', gameStart);
 function gameStart() {
     changeDiv('start', 'questionHolder');
-    //nextquestion();
-    startTimer();
+    currentQuestion = 0;
+    displayQuestion();
+   // startTimer();
 };
 
 //timer function/Count down
@@ -94,24 +95,30 @@ function startTimer() {
     }, 1000);
 };
 
-
+function displayQuestion() {
+questionEl.textContent = questionKey[currentQuestion].question
+answerOne.textContent = questionKey[currentQuestion].choiceOne
+answerTwo.textContent = questionKey[currentQuestion].choiceTwo
+answerThree.textContent = questionKey[currentQuestion].choiceThree
+answerFour.textContent = questionKey[currentQuestion].choiceFour
+}
 //will end game when all questions are completed as well as populate the next question
-function nextquestion() {
-    currentQuestion++;
-    //question key is empty end game
-    if(currentQuestion === randomQuestionMix.length) {
-        timeLeft = 0;
-        gameOver();
-        //if not add the next question 
-    }else{questionEl.textContent = randomQuestionMix[currentQuestion].question;
-        //add in the next questions answers
-        var arr = [answerOne, answerTwo, answerThree, answerFour];
-        var i = 0;
-        arr.forEach(element => {
-            element.textContent = randomQuestionMix[currentQuestion].answerKey[i].answer;
-            i++
-       }, i);
-    };
+document.querySelector('#questionHolder').addEventListener('click', nextquestion);
+ function nextquestion(event) {
+    console.log(event)
+    console.log(event.target.className)
+    console.log(event.target.textContent)
+    if(event.target.className === "btn") {
+        console.log(event.target.textContent, questionKey[currentQuestion].answer)
+        if(event.target.textContent === questionKey[currentQuestion].answer){
+            console.log("correct")
+         }else{
+            console.log("not correct")
+         }
+     currentQuestion++;
+     displayQuestion();
+    }
+    
 };
 
 //controls populationg the next question after a user clicks an answer and ending the game when no mire questions left

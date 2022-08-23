@@ -7,7 +7,7 @@
 side notes and add in
 -5 question quiz each question is 10 points
 -each wrong anwer is minus 10 seconds 
--game time 75 sec.
+-game time 60 sec.
 -use this time to study while putting in questions and answers
 
 
@@ -41,3 +41,9 @@ a. **
 b. /
 c. ++ //corect
 d. +=
+
+8/23/22
+-make the questions and answers pop up 
+-make the answer buttons react 
+-upload score to localstorage
+-make the highscore html page link together

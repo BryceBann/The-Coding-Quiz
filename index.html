@@ -20,7 +20,7 @@
 
 <!--High score and timer div -->
     <div id="scoreTime">
-        <p class="highscore" a href="./highscore/highscore.html">View highscores</p>
+        <p class="highscore"  href="./highscore/highscore.html">View highscores</p>
         <p class="timer">Time left: <span id="timeSpan">60</span></p>
     </div>
 
@@ -33,10 +33,10 @@
         </div>
         <div id="questionHolder" class="hide">
             <h2 id="question"></h2>
-            <button id="answer1" class="btn" onclick="nextQuestion(event)"></button>
-            <button id="answer2" class="btn" onclick="nextQuestion(event)"></button>
-            <button id="answer3" class="btn" onclick="nextQuestion(event)"></button>
-            <button id="answer4" class="btn" onclick="nextQuestion(event)"></button>
+            <button id="answer1" class="btn"></button>
+            <button id="answer2" class="btn"></button>
+            <button id="answer3" class="btn"></button>
+            <button id="answer4" class="btn"></button>
         </div>
         <!--Results and high score-->
         <div id="finishedPage" class="hide">
@@ -44,7 +44,7 @@
             <p>Your final score is <span id="pointScore"></span>/50</p>
             <label>Enter your initials:</label>
             <input type="text" id="initials">
-            <button id="sendScore" onclick="submitScore()">Submit score</button>
+            <button id="sendScore" class="btn">Submit score</button>
         </div>
     </div>
 
