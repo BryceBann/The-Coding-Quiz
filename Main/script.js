@@ -1,7 +1,7 @@
 //calling in id/class from HTML 
 const questionEl = document.getElementsByClassName("question")
 const checkers = document.getElementById("right-wrong")
-const timerEl = document.getElementsByClassName("timer")
+const timerEl = document.getElementsByClassName("timeSpan")
 const answerOne = document.getElementById("answer1")
 const answerTwo = document.getElementById("answer2")
 const answerThree = document.getElementById("answer3")
@@ -9,7 +9,7 @@ const answerFour = document.getElementById("answer4")
 const finalScoreEl = document.getElementById("pointScore")
 const nameEl = document.getElementById("initials")
 const highScoreEl = document.getElementById("highScoreList")
-const randomQuestionMix = mixedQ();
+//const randomQuestionMix = mixedQ(); comment out to address later
 //test question 
 var questionKey = [
 {
@@ -32,27 +32,29 @@ document.getElementById(next).removeAttribute('class')
 };
 
 //button to start the game
+document.querySelector('#startButton').addEventListener('click', gameStart);
 function gameStart() {
     changeDiv('start', 'questionHolder');
-    nextquestion();
+    //nextquestion();
     startTimer();
 };
 
 //timer function/Count down
-document.querySelector('#startButton').addEventListener('click', startTimer);
 function startTimer() {
-    let timeLeft = 75;
-    timerEl.textContent = timeLeft;
-    var timeChange = setInterval(
+    let timeLeft = 60;
+   
+    let timeInterval = setInterval(
     () => {
         timeLeft--;
         timerEl.textContent = timeLeft;
         if(timeLeft <= 0 ) {
-            clearInterval(timeChange);
+            clearInterval(timeInterval);
             gameOver();
         }
+        console.log(timeLeft)
     }, 1000);
 };
+
 
 //will end game when all questions are completed as well as populate the next question
 function nextquestion() {
