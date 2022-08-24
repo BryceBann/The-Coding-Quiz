@@ -50,7 +50,7 @@ answer: "array"
  },
 
  {
- question: "Which one is the Increment operator.",
+ question: "Wich one is the Increment operator.",
  choiceOne: "**",
 choiceTwo: "/",
 choiceThree: "++",
@@ -64,7 +64,7 @@ let timeLeft = 60;
 let score = 0;
 let currentQuestion = -1
 let finalScore;
-
+let timeInterval;
 //change div to start the test
 function changeDiv(curr,next){
 document.getElementById(curr).classList.add('hide');
@@ -101,10 +101,6 @@ answerOne.textContent = questionKey[currentQuestion].choiceOne
 answerTwo.textContent = questionKey[currentQuestion].choiceTwo
 answerThree.textContent = questionKey[currentQuestion].choiceThree
 answerFour.textContent = questionKey[currentQuestion].choiceFour
-
-// if(questionEl.textContent = questionKey[currentQuestion].question.length == 0){
-    
-// }
 }
 //will end game when all questions are completed as well as populate the next question
 document.querySelector('#questionHolder').addEventListener('click', nextquestion);
@@ -112,7 +108,6 @@ document.querySelector('#questionHolder').addEventListener('click', nextquestion
     //console.log(event)
     //console.log(event.target.className)
     //console.log(event.target.textContent)
-
     if(event.target.className === "btn") {
         console.log(event.target.textContent, questionKey[currentQuestion].answer)
         if(event.target.textContent === questionKey[currentQuestion].answer){
@@ -131,7 +126,14 @@ document.querySelector('#questionHolder').addEventListener('click', nextquestion
             }
          }
      currentQuestion++;
+
+     if(currentQuestion  == questionKey.length) {
+        clearInterval(setInterval);
+        gameOver();
+     }else{
      displayQuestion();
+     }
+     
     }
     
 };
