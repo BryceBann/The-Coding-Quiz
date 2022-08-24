@@ -43,7 +43,8 @@ c. ++ //corect
 d. +=
 
 8/23/22
--make the questions and answers pop up 
+-make the questions and answers pop up. done
 -make the answer buttons react 
 -upload score to localstorage
 -make the highscore html page link together
+make a incorrect answer remove time and change question

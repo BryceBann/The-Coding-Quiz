@@ -37,7 +37,7 @@ choiceOne: "4 != 4",
 choiceTwo: "4 > 85",
 choiceThree: "7 === \"7\"",
 choiceFour: "7.6 == \"7.6\"",
-answer: "7.6 == \"76\""
+answer: "7.6 == \"7.6\""
 },
 
 {
@@ -60,7 +60,7 @@ answer: "++"
 ];
 
 //starting postions
-
+let timeLeft = 60;
 let score = 0;
 let currentQuestion = -1
 let finalScore;
@@ -77,12 +77,12 @@ function gameStart() {
     changeDiv('start', 'questionHolder');
     currentQuestion = 0;
     displayQuestion();
-   // startTimer();
+    startTimer();
 };
 
 //timer function/Count down
 function startTimer() {
-    let timeLeft = 60;
+   
     let timeInterval = setInterval(
     () => {
         timeLeft--;
@@ -101,19 +101,34 @@ answerOne.textContent = questionKey[currentQuestion].choiceOne
 answerTwo.textContent = questionKey[currentQuestion].choiceTwo
 answerThree.textContent = questionKey[currentQuestion].choiceThree
 answerFour.textContent = questionKey[currentQuestion].choiceFour
+
+// if(questionEl.textContent = questionKey[currentQuestion].question.length == 0){
+    
+// }
 }
 //will end game when all questions are completed as well as populate the next question
 document.querySelector('#questionHolder').addEventListener('click', nextquestion);
  function nextquestion(event) {
-    console.log(event)
-    console.log(event.target.className)
-    console.log(event.target.textContent)
+    //console.log(event)
+    //console.log(event.target.className)
+    //console.log(event.target.textContent)
     if(event.target.className === "btn") {
         console.log(event.target.textContent, questionKey[currentQuestion].answer)
         if(event.target.textContent === questionKey[currentQuestion].answer){
+            score += 10
             console.log("correct")
+            console.log(score)
          }else{
+            if(timeLeft >= 10){
+                console.log(timeLeft)
+                timeLeft = timeLeft-10;
+                document.getElementById("timeSpan").innerHTML = timeLeft
             console.log("not correct")
+            }
+            else{
+                timeLeft = 0;
+                gameOver();
+            }
          }
      currentQuestion++;
      displayQuestion();
@@ -122,30 +137,30 @@ document.querySelector('#questionHolder').addEventListener('click', nextquestion
 };
 
 //controls populationg the next question after a user clicks an answer and ending the game when no mire questions left
-function grabAnswer(event) {
-    var answerCorrect = grabAnswer(currentQuestion);
-    if(event.target.textContent === answerCorrect) {
-        score += 10;
-    }else{
-        timeLeft -= 10;
-    }
-    setTimeout(
-        () => {
-            event.target.className = "btn";
-            nextquestion();
-        }, 500);
-};
+// function grabAnswer(event) {
+//     var answerCorrect = grabAnswer(currentQuestion);
+//     if(event.target.textContent === answerCorrect) {
+//         score += 10;
+//     }else{
+//         timeLeft -= 10;
+//     }
+//     setTimeout(
+//         () => {
+//             event.target.className = "btn";
+//             nextquestion();
+//         }, 500);
+// };
 
 //checks if answer is correct by looping through the arrAmswer
-function answerChecker(currentQuestion) {
-    var arr = randomQuestionMix[currentQuestion].answerKey;
-    for(var y = 0; y < arr.length; y++) {
-        if(arr[y].correct) {
-            //gives the correct answer
-            return arr[y].answer
-        }
-    }
-};
+// function answerChecker(currentQuestion) {
+//     var arr = randomQuestionMix[currentQuestion].answerKey;
+//     for(var y = 0; y < arr.length; y++) {
+//         if(arr[y].correct) {
+//             //gives the correct answer
+//             return arr[y].answer
+//         }
+//     }
+// };
 
 //the game is over and logs your  current score
 function gameOver() {
