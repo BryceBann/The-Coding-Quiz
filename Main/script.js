@@ -50,7 +50,7 @@ answer: "array"
  },
 
  {
- question: "WHich one is the Increment operator.",
+ question: "Which one is the Increment operator.",
  choiceOne: "**",
 choiceTwo: "/",
 choiceThree: "++",
@@ -91,7 +91,7 @@ function startTimer() {
             clearInterval(timeInterval);
             gameOver();
         }
-        console.log(timeLeft)
+        
     }, 1000);
 };
 
@@ -112,6 +112,7 @@ document.querySelector('#questionHolder').addEventListener('click', nextquestion
     //console.log(event)
     //console.log(event.target.className)
     //console.log(event.target.textContent)
+
     if(event.target.className === "btn") {
         console.log(event.target.textContent, questionKey[currentQuestion].answer)
         if(event.target.textContent === questionKey[currentQuestion].answer){
@@ -124,8 +125,7 @@ document.querySelector('#questionHolder').addEventListener('click', nextquestion
                 timeLeft = timeLeft-10;
                 document.getElementById("timeSpan").innerHTML = timeLeft
             console.log("not correct")
-            }
-            else{
+            }else{
                 timeLeft = 0;
                 gameOver();
             }
@@ -135,32 +135,6 @@ document.querySelector('#questionHolder').addEventListener('click', nextquestion
     }
     
 };
-
-//controls populationg the next question after a user clicks an answer and ending the game when no mire questions left
-// function grabAnswer(event) {
-//     var answerCorrect = grabAnswer(currentQuestion);
-//     if(event.target.textContent === answerCorrect) {
-//         score += 10;
-//     }else{
-//         timeLeft -= 10;
-//     }
-//     setTimeout(
-//         () => {
-//             event.target.className = "btn";
-//             nextquestion();
-//         }, 500);
-// };
-
-//checks if answer is correct by looping through the arrAmswer
-// function answerChecker(currentQuestion) {
-//     var arr = randomQuestionMix[currentQuestion].answerKey;
-//     for(var y = 0; y < arr.length; y++) {
-//         if(arr[y].correct) {
-//             //gives the correct answer
-//             return arr[y].answer
-//         }
-//     }
-// };
 
 //the game is over and logs your  current score
 function gameOver() {

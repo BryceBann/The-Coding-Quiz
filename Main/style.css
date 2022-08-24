@@ -42,12 +42,13 @@ body{
     display: flex;
     flex-flow: column;
     text-align: center;
-    height: fit-content;
+    height: 14rem;
     width: 50%;
     border: 2px solid black;
     align-items: center;
     margin-left: 25%;
     border-radius: 40px;
+    box-shadow: 5px 5px 5px black;
 }
 
 #startButton{
@@ -57,11 +58,24 @@ body{
     margin: auto;
     width: 10rem;
     border-radius: .3rem;
+    box-shadow: 3px 3px 3px black;
 }
 
 .hide{
     display: none;
 }
 
+.btn{
+    background-color: aqua;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px black;
+}
+
+#sendScore{
+    height: 3rem;
+    width: 6rem
+}
 
 
