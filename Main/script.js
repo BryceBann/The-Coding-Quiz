@@ -8,7 +8,7 @@ const answerThree = document.getElementById("answer3")
 const answerFour = document.getElementById("answer4")
 const finalScoreEl = document.getElementById("pointScore")
 const nameEl = document.getElementById("initials")
-const highScoreEl = document.getElementById("highScoreList")
+const submitEl = document.getElementById("sendScore")
 //const randomQuestionMix = mixedQ(); comment out to address later
 //test question 
 var questionKey = [
@@ -146,22 +146,18 @@ function gameOver() {
     finalScoreEl.textContent = finalScore;
 };
 
-function submitScore() {
-    var initials = nameEl.value;
-    //grab the array from storage or create a new one and push the final score to the array
-    let highScore = JSON.parse(localstorage.getItem("highScore")) || [];
-    highScore.push({initials: initials, score: finalScore});
-    //sort the score
-    highScore = highScore.sort((curr, next) => {
-        if(curr.score < next.score) {
-            return 1
-        }else if(curr.score > next.score) {
-            return -1
-        }else{
-            return 0
-        }
-    });
-    //put the updated or new array to local storage and got to highscore page
-    localStorage.setItem('highscores', JSON.stringify(highScore))
-    window.location.href = "./highscore.html";
-};
+submitEl.addEventListener("click", function(event){
+    var highScore ={
+     initials: document.getElementById("initials").value,
+     finalScore: score}
+    
+     document.getElementById("leaders").innerHTML = highScore.initials.toUpperCase() + ", " + highScore.finalScore;
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+    console.log(highScore)
+});
+    
+   
+    
+
+
+

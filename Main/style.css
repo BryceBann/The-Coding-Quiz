@@ -77,9 +77,16 @@ body{
     height: 3rem;
     width: 6rem
 }
-
-
- a :hover{
-    background-color: black;
- }
     
+ #topper{
+    margin: 0;
+ }
+
+ #leaders{
+    margin: 0;
+    font-size: 1rem;
+ }
+
+ #scoreDisplay{
+    margin-top: 1rem;
+ }
