@@ -111,7 +111,7 @@ document.querySelector('#questionHolder').addEventListener('click', nextquestion
     //console.log(event.target.className)
     //console.log(event.target.textContent)
     if(event.target.className === "btn") {
-        console.log(event.target.textContent, questionKey[currentQuestion].answer)
+        //console.log(event.target.textContent, questionKey[currentQuestion].answer)
         if(event.target.textContent === questionKey[currentQuestion].answer){
             score += 10
             console.log("correct")
@@ -154,8 +154,8 @@ submitEl.addEventListener("click", function(){
     var highScore ={
      initials: document.getElementById("initials").value,
      finalScore: score}
-//change input to upper case and push into array
-    //document.getElementById("leaders").innerHTML = highScore.initials.toUpperCase() + ", " + highScore.finalScore;
+    
+    
      highScoreList.push(highScore);
 //set and stringify the array 
     localStorage.setItem("highScore", JSON.stringify(highScoreList));
@@ -169,8 +169,9 @@ submitEl.addEventListener("click", function(){
         let list = "";
         highScoreList.forEach(highScore => {
             list = list + '<p>' + highScore.initials.toUpperCase() + ' : ' + highScore.finalScore + '</p>'
-
+            
         });
+        
         highScoreListEl.innerHTML = list;
     }
     popHighScore();
