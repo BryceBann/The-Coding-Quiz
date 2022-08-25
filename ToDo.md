@@ -55,3 +55,12 @@ make a incorrect answer remove time and change question
 -css highscore pag
 -show scoreboard on secomnd  html page
 
+-change highscore from link to highscore functon
+-chnage quiz complete to highscore when submit
+-remove input and submit btn
+-css for content changes
+ -fonts
+ -colors
+ -borders
+ -hoovers etc
+ 

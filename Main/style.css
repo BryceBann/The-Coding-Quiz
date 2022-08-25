@@ -24,16 +24,14 @@ body{
     justify-content: space-between;
 }
 
-#scoreTime p{
-    display: inline-flex;
-}
-
 .highscore{
     margin-left: 1rem;
+    display: inline-flex;
 }
 
 .timer{
     margin-right: 1rem;
+    display: inline-flex;
 }
 
 /*start button and intro*/
@@ -42,7 +40,7 @@ body{
     display: flex;
     flex-flow: column;
     text-align: center;
-    height: 14rem;
+    height: fit-content;
     width: 50%;
     border: 2px solid black;
     align-items: center;

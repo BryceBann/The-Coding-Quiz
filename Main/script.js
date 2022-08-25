@@ -10,6 +10,7 @@ const finalScoreEl = document.getElementById("pointScore")
 const nameEl = document.getElementById("initials")
 const submitEl = document.getElementById("sendScore")
 const highScoreListEl = document.getElementById("leaders")
+const highScoresEl = document.getElementById("topper")
 //const randomQuestionMix = mixedQ(); comment out to address later
 //test question 
 var questionKey = [
@@ -161,10 +162,14 @@ submitEl.addEventListener("click", function(){
     console.log(highScore)
 
     function popHighScore() {
+        document.getElementById("topper").innerHTML = "High Scores";
+        document.getElementById("sendScore").style.display = "none";
+        //document.getElementsByClassName("hideMe").style.display = "none";
         let highScoreList = JSON.parse(localStorage.getItem("highScore")) || [];
         let list = "";
         highScoreList.forEach(highScore => {
-            list = list + '<p>' + highScore.initials + ' : ' + highScore.finalScore + '</p>'
+            list = list + '<p>' + highScore.initials.toUpperCase() + ' : ' + highScore.finalScore + '</p>'
+
         });
         highScoreListEl.innerHTML = list;
     }
