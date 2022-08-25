@@ -48,3 +48,10 @@ d. +=
 -upload score to localstorage
 -make the highscore html page link together
 make a incorrect answer remove time and change question
+
+8/24/22
+-more than 1 savelocalstorage
+-html highscore page
+-css highscore pag
+-show scoreboard on secomnd  html page
+

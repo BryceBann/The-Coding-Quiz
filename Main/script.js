@@ -155,7 +155,12 @@ submitEl.addEventListener("click", function(event){
     localStorage.setItem("highScore", JSON.stringify(highScore));
     console.log(highScore)
 });
-    
+
+
+function restart(event) {
+    document.querySelector("restart").addEventListener("click", restart)
+    return nextquestion();
+};
    
     
 
