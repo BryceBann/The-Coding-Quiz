@@ -9,6 +9,7 @@ const answerFour = document.getElementById("answer4")
 const finalScoreEl = document.getElementById("pointScore")
 const nameEl = document.getElementById("initials")
 const submitEl = document.getElementById("sendScore")
+const highScoreListEl = document.getElementById("leaders")
 //const randomQuestionMix = mixedQ(); comment out to address later
 //test question 
 var questionKey = [
@@ -145,22 +146,34 @@ function gameOver() {
     finalScore = score;
     finalScoreEl.textContent = finalScore;
 };
-
-submitEl.addEventListener("click", function(event){
+//create a empty array or add to array 
+ var highScoreList = JSON.parse(localStorage.getItem("highScore")) || []
+submitEl.addEventListener("click", function(){
+//get the userinput initials and counted score
     var highScore ={
      initials: document.getElementById("initials").value,
      finalScore: score}
-    
-     document.getElementById("leaders").innerHTML = highScore.initials.toUpperCase() + ", " + highScore.finalScore;
-    localStorage.setItem("highScore", JSON.stringify(highScore));
+//change input to upper case and push into array
+    //document.getElementById("leaders").innerHTML = highScore.initials.toUpperCase() + ", " + highScore.finalScore;
+     highScoreList.push(highScore);
+//set and stringify the array 
+    localStorage.setItem("highScore", JSON.stringify(highScoreList));
     console.log(highScore)
+
+    function popHighScore() {
+        let highScoreList = JSON.parse(localStorage.getItem("highScore")) || [];
+        let list = "";
+        highScoreList.forEach(highScore => {
+            list = list + '<p>' + highScore.initials + ' : ' + highScore.finalScore + '</p>'
+        });
+        highScoreListEl.innerHTML = list;
+    }
+    popHighScore();
 });
+ 
 
 
-function restart(event) {
-    document.querySelector("restart").addEventListener("click", restart)
-    return nextquestion();
-};
+
    
     
 

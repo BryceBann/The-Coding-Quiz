@@ -90,3 +90,13 @@ body{
  #scoreDisplay{
     margin-top: 1rem;
  }
+
+ #restart :link{
+    text-decoration: none;
+    color: black;
+ }
+
+ #restrt :active{
+    text-decoration: none;
+    color: black;
+ }
