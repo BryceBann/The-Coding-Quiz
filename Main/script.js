@@ -11,6 +11,7 @@ const nameEl = document.getElementById("initials")
 const submitEl = document.getElementById("sendScore")
 const highScoreListEl = document.getElementById("leaders")
 const highScoresEl = document.getElementById("topper")
+const highScoreBtn = document.getElementsByClassName("highScore")
 //const randomQuestionMix = mixedQ(); comment out to address later
 //test question 
 var questionKey = [
@@ -167,11 +168,14 @@ submitEl.addEventListener("click", function(){
         //document.getElementsByClassName("hideMe").style.display = "none";
         let highScoreList = JSON.parse(localStorage.getItem("highScore")) || [];
         let list = "";
+        highScoreList.sort((a,b)=>{
+          return  a.finalScore > b.finalScore ? -1:1
+        }) 
         highScoreList.forEach(highScore => {
             list = list + '<p>' + highScore.initials.toUpperCase() + ' : ' + highScore.finalScore + '</p>'
             
         });
-        
+       
         highScoreListEl.innerHTML = list;
     }
     popHighScore();

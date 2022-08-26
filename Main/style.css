@@ -24,8 +24,9 @@ body{
     justify-content: space-between;
 }
 
-.highscore{
-    margin-left: 1rem;
+#highScore{
+    margin-left: .5rem;
+    margin-top: 1rem;
     display: inline-flex;
 }
 
